@@ -104,7 +104,7 @@ router
     "/": () => render(store.home),
     ":view": ({ data, params }) => {
       // data?.view checks if view exists, then ternary runs
-      const view = data?.view ? camelCase(data.view) : "home";
+      const view = data.view ? camelCase(data.view) : "home";
       if (view in store) {
         // store[view]
         render(store[view]);
